@@ -1,0 +1,86 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    
+
+        <section class="background-section">
+            <div class="background-container">
+            <img src="{{ url_for('static', filename='imagenes/ubafac.png') }}" alt="Universitarios">
+            <div class="background-text">
+                <h1>UNIVERSIDADES</h1>
+                <p><a href="/">Inicio</a> » <a href="/universidades">Universidades</a> » <span class="extrabold">{{ universidad.nombre }}</span></p>
+            </div>
+            </div>
+        </section>
+        <section class="center">    
+        <section class="universidad-details">
+            <h2>{{ universidad.nombre }}</h2>
+            <section class="universidad-information">
+                <img src="{{ universidad.imagen }}" alt="{{ universidad.nombre }}">
+                <div class="universidad-information-text">
+                    <p><span class="bold">Tipo:</span> {{ universidad.tipo }}</p>
+                    <p>{{ universidad.descripcion }}</p>
+                </div>
+            </section>
+            <!-- CARRERAS -->
+            <section class="carreras uni-card">
+                <h2>Carreras</h2>
+                <div class="carreras-list uni-list">
+                    <ol>
+                        {% for carrera in universidad.carreras %}
+                            <li>{{ carrera }}</li>
+                        {% endfor %}
+                    </ol>
+                </div>
+            </section>
+                <!-- SEDES -->
+                <section class="sedes uni-card">
+                    <h2>Sedes</h2>
+                    <div class="sedes-list uni-list">
+                        <ol>
+                            {% for sedes in universidad.sedes %}
+                                <li>{{ sedes }}</li>
+                            {% endfor %}
+                        </ol>
+                    </div>
+                </section>
+            <!-- CAMPUS/ INSTALACIONES -->
+            <section class="campus uni-card">
+                <h2>Campus / Instalaciones </h2>
+                <div class="campus list">
+                    <ol>
+                        <li><span class="extrabold">Librería:</span> {{ universidad.campus.libreria|join(', ') }}</li>
+                        <li><span class="extrabold">Dormitorios:</span> {{ universidad.campus.dormitorios|join(', ') }}</li>
+                        <li><span class="extrabold">Laboratorios:</span> {{ universidad.campus.laboratorios|join(', ') }}</li>
+                        <li><span class="extrabold">Instalación Deportiva:</span> {{ universidad.campus.instalacion_deportiva|join(', ') }}</li>
+                        <li><span class="extrabold">Cafeterías:</span> {{ universidad.campus.cafeterias|join(', ') }}</li>
+                    </ol>
+                </div>
+            </section>
+                <!-- CONTACTO -->
+                <section class="campus uni-card">
+                    <h2>Contacto</h2>
+                    <div class="campus list">
+                        <ol>
+                            <li><span class="extrabold">Ubicación:</span> {{ universidad.contacto.ubicacion|join(', ') }}</li>
+                            <li><span class="extrabold">Teléfono:</span> {{ universidad.contacto.telefono|join(', ') }}</li>
+                            <li><span class="extrabold">Email:</span> {{ universidad.contacto.email|join(', ') }}</li>
+                            <li><span class="extrabold">Página Web:</strong> {{ universidad.contacto.web|join(', ') }}</li>
+                        </ol>
+                    </div>
+                </section>
+                <!-- IMAGENES -->
+                <section class="images uni-card">
+                    <h2>Imagenes</h2>
+                    <div class="flex-container">
+                        {% for enlace in universidad.enlace %}
+                            <div class="flex-item">
+                                    <img src="{{ enlace }}" alt="">
+                            </div>
+                        {% endfor %}
+                    </div>
+                </section>
+        </section>
+    </section>
+
+{% endblock %}

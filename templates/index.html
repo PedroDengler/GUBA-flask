@@ -1,0 +1,73 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    
+    <section class="image-section">
+            <div class="image-container">
+            <img src="static/imagenes/universitarios.jpg" alt="">
+            <div class="overlay-text">
+                <h1>¡ENCONTRA LA CARRERA Y UNIVERSIDAD DE TUS SUEÑOS!</h1>
+                <p>“Un pueblo culto nunca puede ser esclavizado.” - <span class="bold">Manuel Belgrano</span></p>
+            </div>
+            </div>
+    </section>
+    <section class="introduction">
+        <h2>¿Qué vas a encontrar en GUBA?</h2>
+            <p><span class="semibold">Explorá tu futuro académico en Buenos Aires con nuestra plataforma dedicada a las universidades, carreras y novedades educativas.</span> Descubrí las instituciones que marcan la pauta en nuestros rankings locales, encontrá información detallada sobre carreras que se alinean con tus metas, y mantenete al día con las últimas noticias del vibrante mundo educativo argentino. </p>
+            <p><span class="semibold">Desde consejos sobre elección de universidad hasta actualizaciones sobre programas destacados, nuestro portal es tu guía confiable para navegar por el enriquecedor camino de la educación superior en Argentina. </span></p>
+    </section>
+    <section class="universities">
+        <div class="background">
+            <img src="{{ url_for('static', filename='imagenes/guba.png') }}" alt="GUBA Logo">
+        </div>
+        <div class="uni-informacion">
+            <div class="universities-title">
+                <h2 class="h2white">RANKING DE UNIVERSIDADES EN BUENOS AIRES</h2>
+            </div>
+            <div class="universities-logos">
+                <img class="uni-background" src="static/imagenes/uba.png" alt="">
+                <img src="static/imagenes/up.png" alt="">
+                <img class="uni-background" src="static/imagenes/uba.png" alt="">
+                <img src="static/imagenes/up.png" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="carreras-card">
+            <h2>Carreras y Tecnicaturas en Buenos Aires</h2>
+            <section class="carreras-articles">
+                <div class="carrera">
+                    <img src="https://picsum.photos/id/1005/800/450" alt="">
+                    <div class="carrera-text">
+                        <h2>This is some title</h2>
+                        <p> Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.</p>
+                        <a>Más conocer</a>
+                    </div>
+                </div>
+                <div class="carrera">
+                    <img src="https://picsum.photos/id/1005/800/450" alt="">
+                    <div class="carrera-text">
+                        <h2>This is some title</h2>
+                        <p> Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.</p>
+                        <a>Más conocer</a>
+                    </div>
+                </div>
+                <div class="carrera">
+                    <img src="https://picsum.photos/id/1005/800/450" alt="">
+                    <div class="carrera-text">
+                        <h2>This is some title</h2>
+                        <p> Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.</p>
+                        <a>Más conocer</a>
+                    </div>
+                </div>
+                <div class="carrera">
+                    <img src="https://picsum.photos/id/1005/800/450" alt="">
+                    <div class="carrera-text">
+                        <h2>This is some title</h2>
+                        <p> Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.</p>
+                        <a>Más conocer</a>
+                    </div>
+                </div>
+            </section>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+    <section class="background-section">
+            <div class="background-container">
+            <img src="static/imagenes/ubafac.png" alt="">
+            <div class="background-text">
+                <h1>UNIVERSIDADES</h1>
+                <p><a href="/">Inicio</a> » <span class="extrabold">Universidades</span></p>
+            </div>
+            </div>
+        </section>
+        <section class="center">
+            <section class="universities-width">
+                <section class="nav-header">
+                    <h3>Índice</h3>
+                    <div class="nav-header-links">
+                        <a href="#tipo">Tipo de Universidades</a>
+                        <a href="#donde">¿Dónde estudiar?</a>
+                        <a href="#king">Ranking</a>
+                        <a href="#">Tipo de Universidades</a>
+                        <a href="#">Tipo de Universidades</a>
+                    </div>
+                </section>
+                <section class="universidades-informacion">
+                    <h2 id="tipo">Las universidades en Argentina:</h2>
+                    <p>Las universidades nacionales de Argentina cubren el máximo nivel educativo de ese país. La educación argentina, y en particular la universitaria, es considerada como una de las más avanzadas y progresistas de América Latina. Es firmemente reconocida y destacada por diversos organismos internacionales, como lo son la UNESCO y la UNICEF.</p>
+                    <h3>A. Universidades Públicas:</h3>
+                    <p>Las universidades públicas en Argentina son accesibles para todos, con un ingreso a menudo irrestricto. Ofrecen una amplia variedad de carreras, permitiendo a los estudiantes explorar sus intereses libremente.</p>
+                    <ul class="list-space uni-list">
+                        <li><span class="bold">Ventajas:</span> Gratuidad en pregrados y grados, diversidad académica y oportunidades para aquellos con recursos financieros limitados.</li>
+                        <li><span class="bold">Proceso de Ingreso:</span> En su mayoría, el ingreso es sin restricciones, aunque algunas facultades pueden requerir exámenes de ingreso o cursos previos. Esta diversidad facilita el acceso a la educación superior.</li>
+                        <li><span class="bold">Desventajas:</span> En algunas facultades, el acceso puede requerir exámenes adicionales.</li>
+                    </ul>
+                    <h3>B. Universidades Privadas:</h3>
+                    <p>Las universidades privadas ofrecen especialización y a menudo colaboran estrechamente con la industria. Su enfoque es más específico y orientado a la práctica.</p>
+                    <ul class="list-space uni-list">
+                        <li><span class="bold">Proceso de Ingreso:</span> Requieren aplicación y, en algunos casos, exámenes de admisión. Aunque pueden tener aranceles, muchas ofrecen becas y planes de financiamiento. </li>
+
+                        <li><span class="bold">Ventajas:</span> Programas especializados, infraestructuras modernas y flexibilidad académica. </li>
+                            
+                        <li><span class="bold">Desventajas:</span> Costos asociados, pero con opciones de ayuda financiera. </li>
+                           
+                    </ul>
+                    <h3>C. Costos:</h3>
+                    <ul class="list-space uni-list" id="donde">
+                        <li><span class="bold">🎓 Pregrados y Grados en Universidades Públicas:</span> Gratuito.</li>
+                        <li><span class="bold">📚 Posgrados en Universidades Públicas:</span> Maestrías (aprox. $60,000 ARS/año), Especializaciones (aprox. $42,000 ARS/año).</li>
+                        <li><span class="bold">💸 Pregrados y Grados en Universidades Privadas:</span> Costos varían según la institución y carrera. Pueden oscilar entre $80,000 ARS/año y $150,000 ARS/año, con posibilidades de becas y planes de financiamiento.</li>
+                        <li><span class="bold">🏛️ Posgrados en Universidades Privadas:</span> Maestrías suelen costar alrededor de $120,000 ARS/año, con variaciones según la institución y programa. Las especializaciones (de 1 año) pueden costar hasta un 30% menos, alrededor de $84,000 ARS/año.</li>
+                    </ul>
+                    <h3 >¿Cómo elegir dónde estudiar?</h3>
+                    <p>Al elegir una carrera y una institución, es crucial considerar aspectos como la reputación de la universidad, el cuerpo docente, las instalaciones y el enfoque pedagógico. Las universidades públicas, como la UBA, suelen ser reconocidas por su excelencia académica, mientras que las instituciones privadas ofrecen programas más específicos y orientados al mercado laboral.</p>
+                    <p>
+                        Además, es importante tener en cuenta el acceso a recursos adicionales, como pasantías, programas de intercambio y oportunidades de networking. La elección de la institución y la carrera debe alinearse con los objetivos y valores individuales del estudiante.</p>
+                </section>
+                <section class="universities-cards" id="#king">
+                <h2 >Ranking Universidades BA 2024</h2>
+                {% for uni in universidades %}
+                    <a href="{{ url_for('universidad', nombre=uni.nombre) }}" class="universidad-link">
+                        <div class="universidad-card">
+                            <img src="{{ uni.imagen }}" alt="{{ uni.nombre }}">
+                            <div class="universidad-card-text">
+                                <div class="text-ranking">
+                                    <p>Top: {{ uni.ranking }}</p>
+                                </div>
+                                <h2>{{ uni.nombre }}</h2>
+                                <p>{{ uni.tipo }}</p>
+                            </div>
+                        </div>
+                    </a>
+                {% endfor %}
+                <p><span class="extrabold">Fuentes:</span></p>
+                <ul>
+                    <li><a href="https://www.topuniversities.com/world-university-rankings?countries=ar">TopUniversities 2024</a></li>
+                    <li><a href="https://www.adscientificindex.com/university-ranking/?country_code=ar">Scientific Index 2024</a></li>
+                </ul>
+                </section>
+        </section>
+    </section>
+{% endblock %}

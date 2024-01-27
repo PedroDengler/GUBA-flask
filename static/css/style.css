@@ -1,0 +1,811 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Manrope", sans-serif;
+}
+
+:root{
+    --background-color: #FFF;
+    --secondbackground-color: #12274B;
+    --whiteletter-color: #E8E8E8;
+    --titlecolor-color: #12274B;
+    --text-color: #171717;
+    --news-color: #02296C;
+    --light-fontweight: 300;
+    --regular-fontweight: 400;
+    --medium-fontweight: 500;    
+    --semibold-fontweight: 600;
+    --bold-fontweight: 700;
+    --extrabold-fontweight: 800;
+}
+
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: var(--background-color);
+}
+
+h2{
+    color: var(--titlecolor-color);
+    font-family: Manrope;
+    font-size: 2.1rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+h3{
+    color: #000;
+    font-family: Manrope;
+    font-size: 1.7rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+p{
+    color: var(--text-color);
+    font-family: Manrope;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.list-space{
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+}
+
+/*-----------------------
+          HEADER
+------------------------*/
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fffefe;
+    padding: 0rem 5rem;
+}
+
+.navbar-logo img{
+    width: 15rem;
+    height: auto;
+}
+
+.navbar-links{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.navbar-links a{
+    text-decoration: none;
+    position: relative;
+    color: var(--titlecolor-color);
+    font-family: Manrope;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.navbar-links a::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+    background-color: #18272F;
+    top: 2rem;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+    transition-delay: 0.2;
+}
+
+.navbar-links a:hover::before{
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+hr{
+    background-color: var(--text-color);
+}
+
+/* FLEX MENU */
+
+.menu {
+    display: none;
+    position: absolute;
+    padding: 10px;
+    list-style-type: none;
+    text-align: center;
+    z-index: 3000;
+    background-color: #ffffff;
+    height: auto;
+    width: 100%;
+    transition: display 0.5s ease;
+}
+  
+.menu a {
+    text-decoration: none;
+    color: var(--titlecolor-color);
+    font-family: Manrope;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+ 
+.menu a:hover{
+    color: #073fa0;
+    transition: 0.5 ease;
+}
+
+.menu li {
+    padding: 1rem 0rem;
+}
+  
+.menu li:last-child {
+    margin-bottom: 0;
+}
+  
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 35px;
+    padding: 0 10px;
+    color: var(--titlecolor-color);
+    position: relative;
+}
+
+/*-------------------------------
+        INDEX.HTML 
+--------------------------------*/
+
+.image-section {
+    position: relative;
+    height: 32rem;
+    overflow: hidden;
+    box-shadow: 0 0px 10px 0 rgba(0, 0, 0, .15);
+}
+  
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.image-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(18, 39, 75, 0.6);
+    z-index: 1; 
+}
+  
+  
+.image-container img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translate(-20%, -50%);
+  text-align: center;
+  color: #fff;
+  text-align: left;
+  z-index: 100;
+}
+
+.overlay-text h1 {
+    color: var(--whiteletter-color);
+    font-family: Manrope;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    width: 37rem;
+}
+
+.overlay-text p {
+    color: var(--whiteletter-color);
+    font-family: Manrope;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    width: 34rem;
+}
+
+.bold{
+    font-weight: var(--semibold-fontweight);
+}   
+
+.semibold{
+    font-weight: var(--semibold-fontweight);
+}
+
+/* ITNRODUCTION */
+
+.introduction{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    text-align: left;
+    padding: 5rem 6rem;
+    gap: 2rem;
+}
+
+/* RANKING UNIVERSIDADES*/
+
+.universities{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondbackground-color);
+    z-index: -1;
+}
+
+.background img {
+    position: absolute;
+    top: 0rem;
+    left: 2rem;
+    width: 28rem;
+    height: auto;
+    opacity: 0.16;
+}
+
+.uni-informacion{
+    padding: 4rem 1rem;
+}
+
+.universities-title h2{
+    color: var(--whiteletter-color);
+    font-family: Manrope;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    text-align: center;
+}
+
+.universities-logos{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.universities-logos img{
+    width: 10rem;
+    height: auto;
+}
+
+.uni-background{
+    background-color: #E8E8E8;
+    border-radius: 100%;
+}
+
+/* CARRERAS CARDS */
+
+.carreras-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 5rem;
+    gap: 2rem;
+}
+
+.carreras-articles{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    max-width: 1000px;
+    padding: 1rem;
+}
+
+.carrera{
+    max-width: 25rem;
+    box-shadow: 0 0 10px rgba(18, 39, 75, 0.5);
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.5s ease; 
+}
+
+.carrera img{
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.carrera-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    text-align: left;
+    padding: 2rem;  
+    gap: 1rem;
+}
+
+.carrera-text p {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.carrera-text a {
+    font-weight: 600;
+}
+
+.carrera:hover {
+    background-color: var(--secondbackground-color);
+    color: var(--whiteletter-color);
+    transition: transform 0.7s ease;
+}
+
+.carrera:hover h2 {
+    color: var(--whiteletter-color);
+}
+
+.carrera:hover p {
+    color: var(--whiteletter-color);
+}
+
+.carrera:hover img {
+    transform: scale(1.07);
+    transition: transform 0.7s ease;
+}
+
+/*---------------------------
+     CARRERAS.HTML
+---------------------------*/
+
+.carreras-width{
+    max-width: 1100px;
+    padding: 2rem;
+}
+
+/* INDICE */
+
+.nav-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.nav-header-links{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 2rem;
+    margin-top: 1rem;
+    background-color: var(--secondbackground-color);
+}
+
+.nav-header-links a{
+    text-decoration: none;
+    color: var(--whiteletter-color);
+    text-align: center;
+    font-family: Manrope;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    transition: .25s ease;
+}
+
+.nav-header-links a:hover {
+    color: #CCC;
+    box-shadow: 0 2px 0 0 currentcolor;
+}
+
+/* INFORMACION  */
+
+.carreras-informacion{
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+    margin-bottom: 4rem;
+}
+
+/*---------------------------
+     UNIVERSIDADES.HTML
+---------------------------*/
+
+.universities-width{
+    max-width: 1100px;
+    padding: 2rem;
+}
+
+/* INFORMACION  */
+
+.universidades-informacion{
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+    margin-bottom: 4rem;
+}
+
+/* Universidades */
+
+.universities-cards{
+    display: grid;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+
+    gap: .5rem;
+}
+
+.universities-cards a{
+    text-decoration: none;
+}
+
+.universidad-card {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.universidad-card:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transform: scale(1.03);
+}
+
+
+.universidad-card-text{
+    display: flex;
+    flex-direction: column;
+    max-width: 60ch;
+    padding: 2rem;
+}
+
+.universidad-card img {
+    width: 100%;
+    max-height: 20rem;
+}
+
+
+.universidad-card h2 {
+    font-size: 1.8em;
+}
+
+.universidad-card p {
+    color: var(--text-color);
+    font-family: Manrope;
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: var(--medium-fontweight);
+    line-height: normal;
+}
+
+.text-ranking p{
+    color: var(--text-color);
+    font-family: Manrope;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: var(--medium-fontweight);
+    line-height: normal;
+}
+
+/*-------------------------------------
+        UNIVERSDIAD - CADA UNA
+--------------------------------------*/
+
+.universidad-details{
+    max-width: 1100px;
+    padding: 6rem 2rem;
+}
+
+.universidad-information{
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .45);
+}
+
+.universidad-information img{
+    width: 100%;
+    height: auto;
+}
+
+.universidad-information-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    gap: .5rem;
+    padding: 1rem;
+}
+
+.universidad-information-text p{
+    color: var(--text-color);
+    font-family: Manrope;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.uni-card{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.uni-card p, li{
+    color: var(--text-color);
+    font-family: Manrope;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    list-style: none;
+}
+
+.uni-list li{
+    list-style: square;
+    margin-left: 1.5rem;
+}
+
+/* IMAGENES CARDS*/
+
+.flex-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+
+.flex-item img{
+    width: 20rem;
+    height: 100%;
+}
+
+/*-------------------------------------
+        IMAGE CONTAINER SECTION 
+                    - 
+        PARA TODAS LAS SECCIONES
+--------------------------------------*/
+
+.background-section {
+    position: relative;
+    height: 32rem;
+    overflow: hidden;
+    box-shadow: 0 0px 10px 0 rgba(0, 0, 0, .15);
+}
+  
+.background-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.background-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(18, 39, 75, 0.6);
+    z-index: 1; 
+}
+  
+  
+.background-container img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+  
+.background-text a {
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+    font-weight: var(--medium-fontweight);
+}
+
+
+.background-text {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  z-index: 100;
+}
+
+.background-text h1 {
+    color: #E8E8E8;
+    font-family: Manrope;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+.background-text p {
+    color: #E8E8E8;
+    font-family: Manrope;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.extrabold{
+    font-weight: var(--extrabold-fontweight);
+}
+
+/*----------------------------
+            MEDIA
+-----------------------------*/
+
+@media (max-width: 1200px) {
+    .navbar{
+        padding: 0rem 2rem;
+    }
+
+    .navbar-links{
+      display: none;
+    }
+  
+    .menu-icon {
+      display: block;
+    }
+  
+    .menu-links {
+      display: block;
+      transition: display 0.5s ease;
+    }
+  
+    .menu-links.active {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .overlay-text h1 {
+        font-size: 2.5em;
+        padding: 0rem 3rem;
+        max-width: 30rem;
+    }
+    
+    .overlay-text p {
+        font-size: 1.3rem;
+        padding: 0rem 3rem;
+        max-width: 30rem;
+    }
+
+    .universidad-card {
+        display: grid;
+        grid-template-columns: none;
+        grid-template-rows: 40% 60%;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+    }
+
+    .universidad-information {
+        padding: 2rem 0rem;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 50% 50%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .introduction {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+        text-align: left;
+        padding: 5rem 2rem;
+        gap: 2rem;
+    }
+    
+    .universities-logos{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .background img {
+        display: none;
+    }
+    
+    .background-text h1{
+        font-size: 2.5rem;
+    }
+
+    .nav-header-links{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+}  
+
+
+
+

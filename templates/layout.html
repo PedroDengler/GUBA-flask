@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>GUBA</title>
+    <meta name="description" content="¿No sabes a que universidad ir?¿Qué carrera estudiar? Tenemos las mejores universidades de todo Buenos Aires...">
+    <meta name="robots" content="index,follow">
+    <link rel="icon" sizes="192x192" href="{{ url_for('static', filename='imagenes/websiteicon2.png') }}">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="mask-icon" href="{{ url_for('static', filename='imagenes/websiteicon2.png') }}" color="#000000">
+</head>
+<body>
+    <header>
+        <section class="navbar">
+            <div class="navbar-logo">
+                <a href="/">
+                <img src="{{ url_for('static', filename='imagenes/GUBA12.png') }}" alt="GUBA Logo">
+                </a>
+            </div>
+            <div class="navbar-links">
+                <a href="/carreras">Carreras</a>
+                <a href="/universidades">Universidades</a>
+                <a href="/about">Noticias</a>
+            </div>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            </section>
+            <div class="flex-menu">
+                <ul class="menu">
+                    <hr>
+                 <li> <a href="/carreras">Carreras</a></li>
+                    <hr>
+                 <li> <a href="/universidades">Universidades</a></li>
+                    <hr>
+                 <li> <a href="/noticias">Noticias</a></li>
+                    <hr>
+               </ul>
+            </div>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</html>
